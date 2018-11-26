@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }else{
 
                     requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},Permission_Request_Code);
+                    Log.d("Androidv", "もう一回");
                 }
                 break;
             default:
@@ -137,7 +138,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //「進む」ボタンを押したとき
             if (v.getId() == R.id.go) {
                 Log.d("Androidv", "進む");
-                cursor.moveToNext();
 
                 if (!cursor.moveToNext()){
                     cursor.moveToFirst();
@@ -150,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //「戻る」ボタンを押したとき
             } else if (v.getId() == R.id.back) {
                 Log.d("Androidv", "戻る");
-                cursor.moveToPrevious();
 
                 if (!cursor.moveToPrevious()){
                     cursor.moveToLast();
@@ -187,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         if (timesecond >= 2.0){
                                             //画像を自動表示
                                             Log.d("Androidv", "自動で進む");
-                                            cursor.moveToNext();
 
                                             if (!cursor.moveToNext()){
                                                 cursor.moveToFirst();
